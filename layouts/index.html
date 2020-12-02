@@ -1,0 +1,33 @@
+{{ partial "header.html" . }}
+
+<div class='home'>
+  <div class='container'>
+    <img class='avatar' src='/images/abi-noda.png' />
+
+    <h2>Hi, I'm Abi</h2>
+
+    <p>I'm a programmer and entrepreneur currently living in Boulder, Colorado. I started <a target='_blank' href='https://pullreminders.com'>Pull Reminders</a> in early 2017 and currently work on it full-time. I blog mostly about engineering management and bootstrapping.</p>
+
+    <h2>Newest posts</h2>
+
+    <ul>
+      {{ range first 6 (where .Data.Pages ".Draft" false).ByPublishDate.Reverse }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+
+    <h2>My private email list</h2>
+    <p>If you want to hear about new posts, get on my private email list:</p>
+    <form name="emailList" method="post" netlify>
+      <label>Your Name<input type="text" name="name" /></label>   
+      <label>Your Email (kept private! never shared.) <input type="email" name="email" /></label>
+      <button type="submit">Sign up</button>
+    </form>
+  </div>
+
+  <div class='btnet'>
+    Looking for <a href='/bugtrackernet.html'>BugTracker.NET</a>?
+  </div>
+</div>
+
+{{ partial "footer.html" . }}

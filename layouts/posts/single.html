@@ -1,0 +1,13 @@
+{{ partial "header.html" . }}
+  <div class='post'>
+    <div class='container'>
+      <h1>{{ .Params.postTitle }}</h1>
+      <time>{{ dateFormat "Jan 2, 2006" .Params.publishdate }}</time>
+      <div class='content'>
+        {{ .Content }}
+
+        <p><em>Have questions or feedback? <a href='http://twitter.com/abi'>DM me on Twitter</a> or <a href="mailto:a@abinoda.com">shoot me an email</a>.</p>
+      </div>
+    </div>
+  </div>
+{{ partial "footer.html" . }}

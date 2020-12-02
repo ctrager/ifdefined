@@ -1,0 +1,126 @@
+body {
+	font-family: verdana, arial;
+	font-size: 14px;
+	background: #ffffef;
+}
+
+a {
+	color: #0000ff;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ff6633;
+	text-decoration: none;
+}
+
+.content {
+	text-align: left;
+	margin-left: 20px;
+	max-width: 700px;
+}
+
+.ad {
+	padding: 30px;
+	border: 1px solid gray;
+	background: white;
+}
+
+.menu {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.menuitem {
+	margin-right: 10px;
+	display: inline-block;
+}
+
+.menuitem a {
+	font-weight: normal;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+
+.header {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #009900;
+	letter-spacing: 1px;
+}
+
+.download {
+	border: 1px solid gray;
+	background: lightgreen;
+	padding: 5px;
+}
+
+.donate {
+	border: 1px solid gray;
+	background: lightgreen;
+	padding: 5px;
+}
+
+li {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.quote {
+	margin-left: 20px;
+	border: 1px solid gray;
+	background: lightgray;
+	padding: 15px;
+	margin-top: 15px;
+	border-radius: 8px;
+}
+
+.quote::before {
+	content: '"...';
+}
+
+.quote::after {
+	content: '..."';
+}
+
+/* for docs */
+
+.hdg {
+	border-left: 10px solid #009900;
+	padding-left: 10px;
+	margin-bottom: 10px;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #009900;
+}
+
+
+.bold {
+	color: #009900; 
+	font-weight: bold;
+}
+
+.xxxdocdonate {
+	background: #ffcc66; 
+	border: solid 1px blue; 
+	padding: 3px; 
+	text-align: center;
+
+}
+
+.docdonate {
+	background: #ffcc66; 
+	border: solid 1px blue; 
+	padding: 6px; 
+	text-align: center;
+	margin-top: 8px;
+	margin-bottom: 20px;
+
+}

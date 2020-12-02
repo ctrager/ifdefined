@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customizing CSS</title>
+
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2755587-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-2755587-1');
+	</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="StyleSheet" href="ifdefined.css" type="text/css">
+</head>
+<body>
+<div class="content">
+<div>
+	<a href="README.html#toc">BugTracker.NET - Documentation table of contents</a>
+	<div class="docdonate">Please <a href="donate_to_bugtracker.html">donate</a> if BugTracker.NET is helping your organization</div>
+</div>
+
+<span class=hdg>Customizing the appearance</span>&nbsp;&nbsp;&nbsp;<a href=README.html#toc style="font-size: 8pt;">[back to contents]</a>
+<p>
+You can change the appearance of the BugTracker.NET web pages by editing the following files:
+
+<p>
+<li><span style="font-weight: bold">Web.config</span> - The following lines in Web.config change the page titles from "BugTracker.NET" to "ABC Customer Support" and change the term "Bug" to "Item".
+<ul>
+&lt;add key="AppTitle" value="ABC Customer Support"/&gt;<br>
+&lt;add key="SingularBugLabel" value="Item"/&gt;<br>
+&lt;add key="PluralBugLabel" value="Items"/&gt;<br>
+</ul>
+<li><span style="font-weight: bold">custom_logo.html</span> - contains the HTML for the green and white "BugTracker.NET" logo.
+<p>
+<li><span style="font-weight: bold">custom_header.html</span> - contains the HTML that appears across the top of every page.  In the second screenshot below, the sun image and "ABC Software".
+<p>
+<li><span style="font-weight: bold">custom_footer.html</span> - contains the HTML that appears at the bottom of every page.  In the second screenshot below, the "privacy policy", "terms of service" and "contact" links.
+<p>
+<li><span style="font-weight: bold">btnet_custom.css</span> - contains overrides to the default fonts, colors, and other CSS style related settings. It is overridding btnet_base.css
+<p>
+<li><span style="font-weight: bold">btnet_edit_bug.css, btnet_search_bug.css</span> - can be used to control the appearance and location of specific labels and fields in the pages bugs.aspx and search.aspx.
+<p>&nbsp;<p>
+Do be careful as you upgrade to newer releases of BugTracker.NET that you don't overlay your customized files.
+You should keep backups of any files that you customize in a safe place.
+<p>
+The custom html is cached by BugTracker.NET, so if you make changes, you need to refresh the cache. A quick way to do this is by just typing a blank character somewhere in Web.config.
+<p>
+Below are two screenshots to give you an idea of the changes you can make by editing the files listed here. The first screenshot shows BugTracker.NET's "add a bug" page after installation, before customization.
+The second screenshot shows it customized using the files previously described.
+
+<p>&nbsp;<p>
+<div class="bold">Before customization:</div><p>
+<img class="screen" src="images/bug_tracker_default.gif">
+
+<p>&nbsp;<p>
+<div class="bold">After changes to custom_header.html, custom_footer.html, custom_logo.html, and btnet_custom.css:</div><p>
+<img class="screen" src="images/bug_tracker_css.gif">
+
+</div>
+</body>
+</html>

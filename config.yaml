@@ -1,0 +1,10 @@
+enableGitInfo: true
+title: "Abi Noda"
+author:
+  name: "Abi Noda"
+  email: "a@abinoda.com"
+staticDir:
+  - static
+  - btnet
+disableKinds:
+  - sitemap
