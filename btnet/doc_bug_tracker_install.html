@@ -1,131 +1,137 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<!-- CHANGE -->
-	<title>BugTracker.NET Docs - Install</title> 
+	<title>BugTracker.NET Docs - Install</title>
 	<link rel="StyleSheet" href="ifdefined.css" type="text/css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 
 <body>
+	<div class="content">
 
-<div class="ad">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-9943333320354155"
-data-ad-slot="2141822810"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
+		<div class="menu">
+			<span class="menuitem"><a href="bugtrackernet.html">Overview</a></span>
+			<span class="menuitem"><a href="README.html">Docs Table of Contents</a></span>
+			<span class="menuitem"><a href="http://sourceforge.net/projects/btnet/forums/forum/226938">Help
+					Forum</a></span>
+			<!--<span class="menuitem"><a href=/btnet>Demo</a></span>-->
+			<span class="menuitem"><a href="bugtrackernet_download.html">Download</a></span>
+			<span class="menuitem donate"><a href="donate_to_bugtracker.html">Please donate</a></span>
+		</div>
 
-<div class="content">
+		<!-- CONTENT -->
 
-	<div class="menu">
-		<span class="menuitem"><a href="bugtrackernet.html">Overview</a></span>
-		<span class="menuitem"><a href="README.html">Docs Table of Contents</a></span>
-		<span class="menuitem"><a href="http://sourceforge.net/projects/btnet/forums/forum/226938">Help Forum</a></span>
-		<!--<span class="menuitem"><a href=/btnet>Demo</a></span>-->
-		<span class="menuitem"><a href="bugtrackernet_download.html">Download</a></span>		
-		<span class="menuitem donate"><a href="donate_to_bugtracker.html">Please donate</a></span>
-	</div>
+		<!-- ------------------ Installation ----------------- -->
 
-	<!-- CONTENT -->
+		<div class="header">
+			<a name="installation"></a>
+			Installation
+		</div>
 
-<!-- ------------------ Installation ----------------- -->
-
-<div class="header">
-	<a name="installation"></a>
-	Installation
-</div>
-
-I try to make BugTracker.NET easy to install.
-For people with an ASP.NET development background, it is easy.
-If you do run into a problem, look for an answer in the <a href="http://sourceforge.net/projects/btnet/forums/forum/226938">forum</a>, or ask a question and I'll usually respond the same day.
-But, if you simply would rather not be bothered, you can hire me to do the installation, including installation of IIS, SQL Server Express, and, if you like, integration with email, Subversion, Git, Mercurial,
-Active Directory, etc, either on your own hardware or at your shared or VPS host, for as little as $300.  Contact me at <a href=mail:ctrager@yahoo.com>ctrager@yahoo.com</a>
-<p>
-Ok, the installation instructions:
-<p>
+		I try to make BugTracker.NET easy to install.
+		For people with an ASP.NET development background, it is easy.
+		If you do run into a problem, look for an answer in the <a
+			href="http://sourceforge.net/projects/btnet/forums/forum/226938">forum</a>, or ask a question and I'll
+		usually respond the same day.
+		But, if you simply would rather not be bothered, you can hire me to do the installation, including installation
+		of IIS, SQL Server Express, and, if you like, integration with email, Subversion, Git, Mercurial,
+		Active Directory, etc, either on your own hardware or at your shared or VPS host, for as little as $300. Contact
+		me at <a href=mail:ctrager@yahoo.com>ctrager@yahoo.com</a>
+		<p>
+			Ok, the installation instructions:
+		<p>
 
 
-Prerequisites:
-<ul>
-<li>IIS
-<li>ASP.NET Framework, 4.x or better
-<li>MS SQL Server
-</ul>
-<p>
-Installation Steps:
-<ol>
-<li>Extract the files from the zip file.
-<p>
-<li>Create the IIS app. Launch IIS Manager, navigate to Default Web Site, Add Application. The Alias can be anything. The physical path should be the www subdirectory.
-	For example, if you extracted the zip to c:\btnet_377, 
-	then the physical path of the application should be c:\btnet_377\www.
-<p>
-<li>Create a database. The best way is to use SQL Server Management Studo.
-<p>
-<li>Update Web.confg. Open the wwww\Web.config file in your favorite editor and follow the "Quick Start" instructions.
-<p>
-<li>Log in. If you chose, for example, "btnet" as your Alias, then point your browser to http://localhost/btnet. 
-	You should see a login page. Login as user "admin", password "admin".
-	
-<p>
-You will be prompted to run the www\setup.sql script, which creates the database tables, from a web page form, or you
-could also do it in your favorite db admin tool. 
-<p>
-<li>Read this warning:
+			Prerequisites:
+		<ul>
+			<li>IIS
+			<li>ASP.NET Framework, 4.x or better
+			<li>MS SQL Server
+		</ul>
+		<p>
+			Installation Steps:
+		<ol>
+			<li>Extract the files from the zip file.
+				<p>
+			<li>Create the IIS app. Launch IIS Manager, navigate to Default Web Site, Add Application. The Alias can be
+				anything. The physical path should be the www subdirectory.
+				For example, if you extracted the zip to c:\btnet_377,
+				then the physical path of the application should be c:\btnet_377\www.
+				<p>
+			<li>Create a database. The best way is to use SQL Server Management Studo.
+				<p>
+			<li>Update Web.confg. Open the wwww\Web.config file in your favorite editor and follow the "Quick Start"
+				instructions.
+				<p>
+			<li>Log in. If you chose, for example, "btnet" as your Alias, then point your browser to
+				http://localhost/btnet.
+				You should see a login page. Login as user "admin", password "admin".
 
-<div style='background:yellow; border:2px solid red; padding:6px;'>
-	<p>
-	WARNING: If you are planning to use Bugtracker.NET on a public web server, an inTERnet, not an inTRAnet, then after you install you should:
-	<p>
-	1. Change the "admin" password.  Of course.
-	<p>
-	2. Delete the files "query.aspx" and "install.aspx".
-</div>
+				<p>
+					You will be prompted to run the www\setup.sql script, which creates the database tables, from a web
+					page form, or you
+					could also do it in your favorite db admin tool.
+				<p>
+			<li>Read this warning:
 
-</ol>
-<p>&nbsp<p>
-At this point you should be able to add bugs by clicking on "add a bug". Please take some time to look at the rest of this documentation.
-Also, please read the comments in the Web.config to learn what else you can do with BugTracker.NET.
-BugTracker.NET is deceptively simple when you first install it, but by doing a quick read of the comments in Web.config and a quick pass through the documentation pages,
-you'll get some idea of the things you can customize.
+				<div style='background:yellow; border:2px solid red; padding:6px;'>
+					<p>
+						WARNING: If you are planning to use Bugtracker.NET on a public web server, an inTERnet, not an
+						inTRAnet, then after you install you should:
+					<p>
+						1. Change the "admin" password. Of course.
+					<p>
+						2. Delete the files "query.aspx" and "install.aspx".
+				</div>
 
-<div class="header">
-	More Info
-</div>
+		</ol>
+		<p>&nbsp
+		<p>
+			At this point you should be able to add bugs by clicking on "add a bug". Please take some time to look at
+			the rest of this documentation.
+			Also, please read the comments in the Web.config to learn what else you can do with BugTracker.NET.
+			BugTracker.NET is deceptively simple when you first install it, but by doing a quick read of the comments in
+			Web.config and a quick pass through the documentation pages,
+			you'll get some idea of the things you can customize.
 
-<div class="header">
-	Backing up BugTracker.NET
-</div>
+		<div class="header">
+			More Info
+		</div>
 
-<p>
-	If you want to backup BugTracker.NET data, then backup the following:
-	<p>
-	1. Your SQL Server database
-	<p>
-	2. The files you have in the folder you have configured as your "UploadFolder" in Web.config.  By default, BugTracker.NET saves uploads in the DB, so maybe you can skip this step.
-	<p>
-	3. Your configuration and customized files:<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;a) Web.config<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;b) btnet_service.exe.config<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;c) any files you have changed in the www\custom folder<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;d) hook scripts, for svn, git, hg<br>
-	
-	
-	
+		<div class="header">
+			Backing up BugTracker.NET
+		</div>
 
-<div class="header">
-	Creating a SQL Server Login/User
-</div>	
+		<p>
+			If you want to backup BugTracker.NET data, then backup the following:
+		<p>
+			1. Your SQL Server database
+		<p>
+			2. The files you have in the folder you have configured as your "UploadFolder" in Web.config. By default,
+			BugTracker.NET saves uploads in the DB, so maybe you can skip this step.
+		<p>
+			3. Your configuration and customized files:<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;a) Web.config<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;b) btnet_service.exe.config<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;c) any files you have changed in the www\custom folder<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;d) hook scripts, for svn, git, hg<br>
 
-If are using SQL Server authentication and if you want to create a new SQL Server Login/User with just the minimum permissions, below is the script to do it.  
- The db_ddladmin permission is only needed for creating custom columns via the BugTracker.NET "admin" page.
- The db_backupoperator permission is only needed to do backups via the BugTracker.NET "admin" page.
 
-<pre>
+
+
+		<div class="header">
+			Creating a SQL Server Login/User
+		</div>
+
+		If are using SQL Server authentication and if you want to create a new SQL Server Login/User with just the
+		minimum permissions, below is the script to do it.
+		The db_ddladmin permission is only needed for creating custom columns via the BugTracker.NET "admin" page.
+		The db_backupoperator permission is only needed to do backups via the BugTracker.NET "admin" page.
+
+		<pre>
 CREATE LOGIN user1 WITH PASSWORD = N'pass1', DEFAULT_DATABASE = btnet
 CREATE USER user1 FOR LOGIN user1
 EXEC sp_addrolemember N'db_datawriter', N'user1'
@@ -137,22 +143,33 @@ EXEC sp_addrolemember N'db_backupoperator', N'user1'
 </pre>
 
 
-<div class="header">
-	<a name="upgrading"></a>
-	Upgrading
-</div>	
+		<div class="header">
+			<a name="upgrading"></a>
+			Upgrading
+		</div>
 
-If you are currently running an old version of BugTracker.NET and you have downloaded the most recent version of BugTracker.NET and want to upgrade to it, here are general instructions:
-<p>Make sure you have a backup of your database, your Web.config file, and any other files that you have customized, such as btnet_custom.css or custom_header.html.   Maybe look at the last modified dates of your files to double check which ones you have customized.
-<p>Read <a href="https://sourceforge.net/p/btnet/code/HEAD/tree/RELEASE_NOTES.TXT">RELEASE_NOTES.TXT</a> and follow the instructions for each individual release.  You only need to download the latest release, but you do need to follow the instructions in RELEASE_NOTES.TXT for each intermediate release.
-<p>Often, RELEASE_NOTES.TXT directs you to run SQL in the file "upgrade.sql".  Run the SQL a little bit at a time, one release at a time.
-<p>Usually you don't need to make any changes to your Web.config, but once in a while you do.  The RELEASE_NOTES.TXT file will tell you when must make a change. See for example the release notes for release 2.7.5.  Sometimes you might want to change your Web.config in order to turn on new features.
-<p>Overlay the files in your virtual directory with the new files from the .zip EXCEPT Web.config and the files in your "custom" folder.  Don't overlay your Web.config file.
-<p>Don't accidentally re-copy install.aspx and query.aspx to your public website.
-</div>
+		If you are currently running an old version of BugTracker.NET and you have downloaded the most recent version of
+		BugTracker.NET and want to upgrade to it, here are general instructions:
+		<p>Make sure you have a backup of your database, your Web.config file, and any other files that you have
+			customized, such as btnet_custom.css or custom_header.html. Maybe look at the last modified dates of your
+			files to double check which ones you have customized.
+		<p>Read <a href="https://sourceforge.net/p/btnet/code/HEAD/tree/RELEASE_NOTES.TXT">RELEASE_NOTES.TXT</a> and
+			follow the instructions for each individual release. You only need to download the latest release, but you
+			do need to follow the instructions in RELEASE_NOTES.TXT for each intermediate release.
+		<p>Often, RELEASE_NOTES.TXT directs you to run SQL in the file "upgrade.sql". Run the SQL a little bit at a
+			time, one release at a time.
+		<p>Usually you don't need to make any changes to your Web.config, but once in a while you do. The
+			RELEASE_NOTES.TXT file will tell you when must make a change. See for example the release notes for release
+			2.7.5. Sometimes you might want to change your Web.config in order to turn on new features.
+		<p>Overlay the files in your virtual directory with the new files from the .zip EXCEPT Web.config and the files
+			in your "custom" folder. Don't overlay your Web.config file.
+		<p>Don't accidentally re-copy install.aspx and query.aspx to your public website.
+	</div>
 
-<!-- END CONTENT -->
+	<!-- END CONTENT -->
 
-</div>
+	</div>
+	<script data-goatcounter="https://ifdefined.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
+
 </html>

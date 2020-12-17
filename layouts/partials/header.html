@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131577675-1"></script>
-  <script>
-    if (window.location.hostname !== "localhost") {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-131577675-1');
-    }
-  </script>
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
     {{- if .IsHome }}
-      {{ .Title }}
+    {{ .Title }}
     {{- else }}
-      {{ .Title }} | {{ .Site.Title }}
+    {{ .Title }} | {{ .Site.Title }}
     {{ end }}
   </title>
   <meta property="og:title" content="{{- if .IsHome }}{{ .Title }}{{- else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
@@ -28,8 +19,9 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="https://ifdefined.com/images/abi-noda.png">
   <link href="/styles/styles.css" rel="stylesheet">
-  <link rel="alternate" type="application/rss+xml+xml" href="/index.xml" title="RSS Feed" /> 
+  <link rel="alternate" type="application/rss+xml+xml" href="/index.xml" title="RSS Feed" />
 </head>
+
 <body>
   <header class='header'>
     <a href='/' class='title'>Abi Noda's Blog</a>

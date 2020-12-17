@@ -1,69 +1,61 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>POP3 configuration</title>
-
-	<!-- Global Site Tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2755587-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-2755587-1');
-	</script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="StyleSheet" href="ifdefined.css" type="text/css">
 </head>
+
 <body>
-<div class="content">
-<div>
-	<a href="README.html#toc">BugTracker.NET - Documentation table of contents</a>
-	<div class="docdonate">Please <a href="donate_to_bugtracker.html">donate</a> if BugTracker.NET is helping your organization</div>
-</div>
+	<div class="content">
+		<div>
+			<a href="README.html#toc">BugTracker.NET - Documentation table of contents</a>
+			<div class="docdonate">Please <a href="donate_to_bugtracker.html">donate</a> if BugTracker.NET is helping
+				your organization</div>
+		</div>
 
-<span class=hdg>Receiving email using btnet_service.exe</span>&nbsp;&nbsp;&nbsp;<a href=README.html#toc style="font-size: 7pt;">[back to contents]</a>
-<p>
-One of the powerful features of BugTracker.NET is its ability to
-receive an email and treat it as a bug entry. Once it's in the
-database, you can respond to the email from within BugTracker.NET
-and your response will be tracked. The apps that receive the
-emails are btnet_console.exe and btnet_service.exe. Btnet_console.exe
-and btnet_service.exe are POP3 clients that fetch email and stuff them in
-the database as bugs. You configure the email accounts on the project
-pages - you can use a different email account per project.
-You can also respond to emails from within btnet and the
-responses are saved.
-<p>
-Btnet_console.exe and btnet_service.exe do the same thing, but one is
-just a console app and the other is a service. Try running the console
-app first because it is verbose and will help you debug your configuration.
-    <p>
-Both of them get their settings from the "btnet_service.exe.config" file.
-<p>
-Running btnet_console:
-<p>
-Enter "btnet_console.exe btnet_service.exe.config" when you are in
-btnet's directory.
-<p>
-Running btnet_service.exe:
-<p>
-Use "installutil.exe" to install btnet_service.exe as a Windows service.
+		<span class=hdg>Receiving email using btnet_service.exe</span>&nbsp;&nbsp;&nbsp;<a href=README.html#toc
+			style="font-size: 7pt;">[back to contents]</a>
+		<p>
+			One of the powerful features of BugTracker.NET is its ability to
+			receive an email and treat it as a bug entry. Once it's in the
+			database, you can respond to the email from within BugTracker.NET
+			and your response will be tracked. The apps that receive the
+			emails are btnet_console.exe and btnet_service.exe. Btnet_console.exe
+			and btnet_service.exe are POP3 clients that fetch email and stuff them in
+			the database as bugs. You configure the email accounts on the project
+			pages - you can use a different email account per project.
+			You can also respond to emails from within btnet and the
+			responses are saved.
+		<p>
+			Btnet_console.exe and btnet_service.exe do the same thing, but one is
+			just a console app and the other is a service. Try running the console
+			app first because it is verbose and will help you debug your configuration.
+		<p>
+			Both of them get their settings from the "btnet_service.exe.config" file.
+		<p>
+			Running btnet_console:
+		<p>
+			Enter "btnet_console.exe btnet_service.exe.config" when you are in
+			btnet's directory.
+		<p>
+			Running btnet_service.exe:
+		<p>
+			Use "installutil.exe" to install btnet_service.exe as a Windows service.
 
-Here's the command I typed, all on one line:
+			Here's the command I typed, all on one line:
 
-<div class=dos>
-c:\Windows\Microsoft.NET\Framework\v4.0.30319>installutil c:\btnet\btnet_service\bin\release\btnet_service.exe
-</div>
+		<div class=dos>
+			c:\Windows\Microsoft.NET\Framework\v4.0.30319>installutil
+			c:\btnet\btnet_service\bin\release\btnet_service.exe
+		</div>
 
-<p>
-And if it works, this the output I see:
+		<p>
+			And if it works, this the output I see:
 
-<pre>
+		<pre>
 <div class=dos>
 Microsoft (R) .NET Framework Installation utility Version 4.0.30319.1
 Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -101,28 +93,32 @@ The transacted install has completed.
 </div>
 </pre>
 
-<p>
-Btnet_service.exe looks for btnet_service.exe.config in its own folder.
-(Older versions were hard-coded to look in the c:\ folder).
-<p>
-Read the comments in btnet_service.exe.config. Note that one service
-instance can support multiple websites.
-<p>
-The service communicates with the website via the page insert_bug.aspx. It cannot use windows security.
-<p>
+		<p>
+			Btnet_service.exe looks for btnet_service.exe.config in its own folder.
+			(Older versions were hard-coded to look in the c:\ folder).
+		<p>
+			Read the comments in btnet_service.exe.config. Note that one service
+			instance can support multiple websites.
+		<p>
+			The service communicates with the website via the page insert_bug.aspx. It cannot use windows security.
+		<p>
 
-<span class=hdg>Fetch email without service</span>&nbsp;&nbsp;&nbsp;<a href=README.html#toc style="font-size: 7pt;">[back to contents]</a>
-<p>
+			<span class=hdg>Fetch email without service</span>&nbsp;&nbsp;&nbsp;<a href=README.html#toc
+				style="font-size: 7pt;">[back to contents]</a>
+		<p>
 
-Instead of running btnet_service.exe and configuring it via btnet_service.exe.config, you 
-can specify in Web.config that the ASP.NET application itself creates a worker 
-thread that does the same thing.&nbsp;&nbsp; On the one hand, this new way is 
-easier to setup and configure than btnet_service.exe.&nbsp;&nbsp; On the other 
-hand, this new way won&#39;t work if you are running BugTracker.NET on a shared host 
-with ASP.NET &quot;Medium Trust&quot;, because &quot;Medium Trust&quot; won&#39;t allow an ASP.NET to 
-create an outgoing TCP/IP connection to the POP3 server.&nbsp; See the &quot;Pop3...&quot; 
-settings in Web.config for more info.<p>
+			Instead of running btnet_service.exe and configuring it via btnet_service.exe.config, you
+			can specify in Web.config that the ASP.NET application itself creates a worker
+			thread that does the same thing.&nbsp;&nbsp; On the one hand, this new way is
+			easier to setup and configure than btnet_service.exe.&nbsp;&nbsp; On the other
+			hand, this new way won&#39;t work if you are running BugTracker.NET on a shared host
+			with ASP.NET &quot;Medium Trust&quot;, because &quot;Medium Trust&quot; won&#39;t allow an ASP.NET to
+			create an outgoing TCP/IP connection to the POP3 server.&nbsp; See the &quot;Pop3...&quot;
+			settings in Web.config for more info.
+		<p>
 
-</div>
+	</div>
+	<script data-goatcounter="https://ifdefined.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
+
 </html>

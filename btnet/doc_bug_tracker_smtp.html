@@ -1,41 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>SMTP configuration</title>
-
-	<!-- Global Site Tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2755587-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-2755587-1');
-	</script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="StyleSheet" href="ifdefined.css" type="text/css">
 </head>
-<body>
-<div class="content">
-<div>
-	<a href="README.html#toc">BugTracker.NET - Documentation table of contents</a>
-	<div class="docdonate">Please <a href="donate_to_bugtracker.html">donate</a> if BugTracker.NET is helping your organization</div>
-</div>
 
-<span class=hdg>Setting up outgoing email and notifications</span>&nbsp;&nbsp;&nbsp;<a href=README.html#toc style="font-size: 7pt;">[back to contents]</a>
-<p>
-You can send email from within BugTracker.NET and these emails are then tracked with the bug, so that you don't end up with emails in one system and bugs in another.
-<p>
-Also, BugTracker.NET can send you email notifications telling you that somebody has
-added or changed a bug that you are interested in.
-<p>
-You configure email by changing settings in Web.config, according to the requirements of your SMTP service provider. For example,
-here are my settings for my GMail account:
-<pre>
+<body>
+	<div class="content">
+		<div>
+			<a href="README.html#toc">BugTracker.NET - Documentation table of contents</a>
+			<div class="docdonate">Please <a href="donate_to_bugtracker.html">donate</a> if BugTracker.NET is helping
+				your organization</div>
+		</div>
+
+		<span class=hdg>Setting up outgoing email and notifications</span>&nbsp;&nbsp;&nbsp;<a href=README.html#toc
+			style="font-size: 7pt;">[back to contents]</a>
+		<p>
+			You can send email from within BugTracker.NET and these emails are then tracked with the bug, so that you
+			don't end up with emails in one system and bugs in another.
+		<p>
+			Also, BugTracker.NET can send you email notifications telling you that somebody has
+			added or changed a bug that you are interested in.
+		<p>
+			You configure email by changing settings in Web.config, according to the requirements of your SMTP service
+			provider. For example,
+			here are my settings for my GMail account:
+		<pre>
 	&lt;mailSettings&gt;
 		&lt;smtp&gt; 
 			&lt;network
@@ -47,85 +40,105 @@ here are my settings for my GMail account:
 		&lt;/smtp&gt;
 	&lt;/mailSettings&gt;
 </pre>
-There are some more examples in Web.config.
-<p>
-Getting SMTP settings to work seems to be one of the trickier setup tasks.
-If you are having trouble, you are going to want to blame BugTracker.NET, but BugTracker.NET is used by thousands of organizations around the world and it has been around for many years.
-So, if you are having a problem with email, it's <i>probably</i> a mistake in <i>YOUR</i> configuration rather than a bug in BugTracker.NET.
+		There are some more examples in Web.config.
+		<p>
+			Getting SMTP settings to work seems to be one of the trickier setup tasks.
+			If you are having trouble, you are going to want to blame BugTracker.NET, but BugTracker.NET is used by
+			thousands of organizations around the world and it has been around for many years.
+			So, if you are having a problem with email, it's <i>probably</i> a mistake in <i>YOUR</i> configuration
+			rather than a bug in BugTracker.NET.
 
-<p>
-If you are having trouble,
-first try to get the "send email" link working on "edit_bug.aspx".
-The "send email" link tests your basic SMTP connectivity, settings, etc.
-If your "send email" is not working, try setting up Outlook Express (or Thunderbird, Eudora...) to send emails from the IIS box.
-Maybe the "Settings" dialogs of Outlook Express will be easier to configure for you than my Web.config file.
-After you have Outlook Express working, if you aren't sure how to
-translate your Outlook Express settings to Web.config, visit the <a href=http://sourceforge.net/projects/btnet/forums/forum/226938>help forum</a>.&nbsp; 
-    If you want help from me personally (sorry, not free), contact me at <a href=mailto:ctrager@yahoo.com>ctrager@yahoo.com</a>.
-<p>
-If you can't even get Outlook Express to work, there's a diagnostic tool you can download from Microsoft,
-<a target=_blank href=http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=BC1881C7-925D-4A29-BD42-71E8563C80A9#Instructions>SMTPDiag.exe</a>. Run it, and see what it says.
+		<p>
+			If you are having trouble,
+			first try to get the "send email" link working on "edit_bug.aspx".
+			The "send email" link tests your basic SMTP connectivity, settings, etc.
+			If your "send email" is not working, try setting up Outlook Express (or Thunderbird, Eudora...) to send
+			emails from the IIS box.
+			Maybe the "Settings" dialogs of Outlook Express will be easier to configure for you than my Web.config file.
+			After you have Outlook Express working, if you aren't sure how to
+			translate your Outlook Express settings to Web.config, visit the <a
+				href=http://sourceforge.net/projects/btnet/forums/forum/226938>help forum</a>.&nbsp;
+			If you want help from me personally (sorry, not free), contact me at <a
+				href=mailto:ctrager@yahoo.com>ctrager@yahoo.com</a>.
+		<p>
+			If you can't even get Outlook Express to work, there's a diagnostic tool you can download from Microsoft,
+			<a target=_blank
+				href=http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=BC1881C7-925D-4A29-BD42-71E8563C80A9#Instructions>SMTPDiag.exe</a>.
+			Run it, and see what it says.
 
-<p>&nbsp;<p>
-<div class="bold">Notifications</div><p>
-<p>
-<p>
-If the "send email" is working but you or other users are not receiving notifications, first test that YOU can receive notifications, following these steps:
-<p>
-1. Click on the "settings" and then the "email notification settings" button.
-<p>
-2. Check "Auto-subscribe to all items" and make sure that all the other "Auto-subscribe" options are unchecked.
-<p>
-3. Make sure that the three dropdowns at the bottom all say "when anything
-changes" and that the last checkbox, "Send notifications even for items you
-add or change" is also checked.
-<p>
-4. Edit your Web.config file to make sure the settings below are ok.
-NotificationEmailEnabled should be "1" and "FROM EMAIL HERE" should be changed to YOUR email address for this experiment.
-<p>
-&lt;add key="NotificationEmailEnabled" value="1"/&gt;<br>
-&lt;add key="NotificationEmailFrom" value="FROM EMAIL HERE"/&gt;
-<p>
-5. Add a bug. You should get a notification.
+		<p>&nbsp;
+		<p>
+		<div class="bold">Notifications</div>
+		<p>
+		<p>
+		<p>
+			If the "send email" is working but you or other users are not receiving notifications, first test that YOU
+			can receive notifications, following these steps:
+		<p>
+			1. Click on the "settings" and then the "email notification settings" button.
+		<p>
+			2. Check "Auto-subscribe to all items" and make sure that all the other "Auto-subscribe" options are
+			unchecked.
+		<p>
+			3. Make sure that the three dropdowns at the bottom all say "when anything
+			changes" and that the last checkbox, "Send notifications even for items you
+			add or change" is also checked.
+		<p>
+			4. Edit your Web.config file to make sure the settings below are ok.
+			NotificationEmailEnabled should be "1" and "FROM EMAIL HERE" should be changed to YOUR email address for
+			this experiment.
+		<p>
+			&lt;add key="NotificationEmailEnabled" value="1"/&gt;<br>
+			&lt;add key="NotificationEmailFrom" value="FROM EMAIL HERE"/&gt;
+		<p>
+			5. Add a bug. You should get a notification.
 
-<p>
-6. Some people have solved problems with notification emails by adding the following to Web.config:
-<p>
-&lt;add key="SmtpForceReplaceOfBareLineFeeds" value="1"/&gt;
-
-
-<p>
-If it works, edit your Web.config so that "FROM EMAIL HERE" is set to the email address you want BugTracker.NET to use.
-Some SMTP service providers will let you make up an email address, so that you could change "FROM EMAIL HERE" to "no_reply@your_domain.com", but others seem to require a real email address that they already know about.
-<p>
-The user settings page lets you control how noisy the emails are. I
-suggest you start off letting BugTracker.NET be very noisy. Once you are
-sure it's working, you can go to your user settings to reduce the number
-of emails you receive.
-
-<p>&nbsp;<p>
-<div class="bold">Other Troubleshooting Tips</div><p>
-<p>
-
-If your notification emails are going to Gmail or Yahoo accounts and show up
-blank there, then you are experiencing the
-<a href=http://sourceforge.net/tracker/index.php?func=detail&aid=1566732&group_id=66812&atid=515837>
-problem described here
-</a>.
-
-To workaround the bug, create "btnet_base_notifications.css" and
-"btnet_custom_notifications.css" and then the app will use those files as the
-style sheets for the emails instead of "btnet_base.css" and
-"btnet_custom.css". You can create those optional files and just leave them
-empty as a work around for the problems. Unfortunately, these style sheets
-will apply for all your users that get notifications, not just the ones who
-use Gmail or Yahoo.
-<p>
-If you are are using GMail's SMTP server, users have reported that GMail limits the number of emails you can send per day and will temporarily disable your outgoing email if you exceed the limit.
-<p>
-IIS on Vista does not come with its own SMTP server.  If you want to run your own SMTP server, hMailServer might be a good one to try first.
+		<p>
+			6. Some people have solved problems with notification emails by adding the following to Web.config:
+		<p>
+			&lt;add key="SmtpForceReplaceOfBareLineFeeds" value="1"/&gt;
 
 
-</div>
+		<p>
+			If it works, edit your Web.config so that "FROM EMAIL HERE" is set to the email address you want
+			BugTracker.NET to use.
+			Some SMTP service providers will let you make up an email address, so that you could change "FROM EMAIL
+			HERE" to "no_reply@your_domain.com", but others seem to require a real email address that they already know
+			about.
+		<p>
+			The user settings page lets you control how noisy the emails are. I
+			suggest you start off letting BugTracker.NET be very noisy. Once you are
+			sure it's working, you can go to your user settings to reduce the number
+			of emails you receive.
+
+		<p>&nbsp;
+		<p>
+		<div class="bold">Other Troubleshooting Tips</div>
+		<p>
+		<p>
+
+			If your notification emails are going to Gmail or Yahoo accounts and show up
+			blank there, then you are experiencing the
+			<a href=http://sourceforge.net/tracker/index.php?func=detail&aid=1566732&group_id=66812&atid=515837>
+				problem described here
+			</a>.
+
+			To workaround the bug, create "btnet_base_notifications.css" and
+			"btnet_custom_notifications.css" and then the app will use those files as the
+			style sheets for the emails instead of "btnet_base.css" and
+			"btnet_custom.css". You can create those optional files and just leave them
+			empty as a work around for the problems. Unfortunately, these style sheets
+			will apply for all your users that get notifications, not just the ones who
+			use Gmail or Yahoo.
+		<p>
+			If you are are using GMail's SMTP server, users have reported that GMail limits the number of emails you can
+			send per day and will temporarily disable your outgoing email if you exceed the limit.
+		<p>
+			IIS on Vista does not come with its own SMTP server. If you want to run your own SMTP server, hMailServer
+			might be a good one to try first.
+
+
+	</div>
 </body>
+
 </html>
