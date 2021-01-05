@@ -11,8 +11,5 @@ https://ifdefined.com/doc_bug_tracker_queries.html
 https://ifdefined.com/doc_bug_tracker_relationships.html
 https://ifdefined.com/doc_bug_tracker_subversion.html
 https://ifdefined.com/donate_to_bugtracker.html
-https://ifdefined.com/Donate_to_BugTracker.NET.html
-https://ifdefined.com/google88dad73c6a8c1b5d.html
 https://ifdefined.com/index.html
 https://ifdefined.com/README.html
-https://ifdefined.com/screenshots
