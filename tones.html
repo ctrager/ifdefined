@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <meta name="Description" content="Drone Tones written by Corey Trager in HTML and Javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drone Tones</title>
+
+    <script language="Javascript">
+        // get html content from other repository 
+        fetch('https://raw.githubusercontent.com/ctrager/drone_tones/master/tones.html')
+            .then(function (response) {
+                return response.text()
+            })
+            .then(function (text) {
+                replace_content(text)
+            })
+            .catch(function (err) {
+                err => console.log("bad");
+                console.log(err)
+
+            })
+
+        function replace_content(content) {
+            document.open();
+            document.write(content);
+            document.close();
+        }
+    </script>
+</head>
+
+</html>
